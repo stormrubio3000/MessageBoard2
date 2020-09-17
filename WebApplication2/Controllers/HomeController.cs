@@ -10,6 +10,12 @@ namespace WebApplication2.Controllers
 {
     public class HomeController : Controller
     {
+        IMessageList messageList;
+
+        public HomeController(IMessageList messageList) {
+            this.messageList = messageList;
+        }
+
         public IActionResult Index()
         {
             return View();
