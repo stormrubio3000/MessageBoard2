@@ -26,7 +26,8 @@ namespace WebApplication2.Controllers
         {
             Comment com = new Comment
             {
-                commment = comm.commment
+                comment = comm.comment,
+                board = comm.board
             };
             return View(com);
         }
