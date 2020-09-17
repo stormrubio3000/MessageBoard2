@@ -15,10 +15,16 @@ namespace WebApplication2.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        [HttpPost]
+        public IActionResult Index(Comment comm)
         {
-            return View();
+            Comment com = new Comment
+            {
+                commment = comm.commment
+            };
+            return View(com);
         }
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
