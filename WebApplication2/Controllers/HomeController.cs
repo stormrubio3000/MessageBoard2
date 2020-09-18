@@ -10,10 +10,10 @@ namespace WebApplication2.Controllers
 {
     public class HomeController : Controller
     {
-        IMessageList messageList;
+        Board board;
 
-        public HomeController(IMessageList messageList) {
-            this.messageList = messageList;
+        public HomeController(Board board) {
+            this.board = board;
         }
 
         public IActionResult Index()
@@ -24,13 +24,15 @@ namespace WebApplication2.Controllers
         [HttpPost]
         public IActionResult Index(Comment comm)
         {
-            Comment com = new Comment
-            {
-                comment = comm.comment,
-                board = comm.board
-            };
-            return View(com);
+            // Comment com = new Comment
+            // {
+            //     comment = comm.comment,
+            //     board = comm.board
+            // };
+            board.comments.Add(comm);
+            return View(board);
         }
+        
 
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

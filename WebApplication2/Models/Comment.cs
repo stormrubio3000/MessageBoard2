@@ -8,6 +8,6 @@ namespace WebApplication2.Models
     public class Comment
     {
         public string comment { get; set; }
-        public List<string> board { get; set; }
+        // public List<string> board { get; set; }
     }
 }
