@@ -21,6 +21,7 @@ namespace WebApplication2.Controllers
             return View(board);
         }
 
+        [ValidateAntiForgeryToken]
         [HttpPost]
         public IActionResult Index(Comment comm)
         {
