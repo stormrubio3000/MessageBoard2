@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using WebApplication2.Models;
 
 namespace WebApplication2
 {
@@ -33,7 +34,7 @@ namespace WebApplication2
 
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
-            services.AddSingleton<IMessageList, MessageList>();
+            services.AddSingleton<Board>();
             }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
